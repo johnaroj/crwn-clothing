@@ -10,7 +10,7 @@ const CheckoutItem =({ cartItem , clearItem, addItem, removeItem}) => {
             <img alt='item' src={imageUrl}/>
         </div>
         <span className='name'>{name}</span>
-        <span className='quantity'><div className="minus" onClick={()=> removeItem(cartItem)}>&#10134;</div><span>{quantity}</span><div className='plus' onClick={() => addItem(cartItem)}>&#10133;</div></span>
+        <span className='quantity'><span role="img" className="minus" onClick={()=> removeItem(cartItem)} aria-label="minus">&#10134;</span><span>{quantity}</span><span role="img" className='plus' onClick={() => addItem(cartItem)} aria-label="plus">&#10133;</span></span>
         <span className='price'>{price}</span>
         <div className='remove-button' onClick={()=>clearItem(cartItem)}> &#10005;</div>
     </div>

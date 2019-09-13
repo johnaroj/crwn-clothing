@@ -1,16 +1,35 @@
 import React from 'react';
+import styled from 'styled-components';
 
-import './card-item.styles.scss';
+const CartItemContainer = styled.div`
+    width: 100%;
+    display: flex;
+    height: 80px;
+    margin-bottom: 15px;
+
+    img {
+    width: 30%;
+    }
+`;
+
+const ItemDetailsContainer = styled.div`
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 10px 20px;
+`;
 
 const CartItem = ({item: {imageUrl, price, name, quantity}}) =>(
-    <div className='cart-item'>
+    <CartItemContainer>
         <img src={imageUrl} alt='item' />
-        <div className='item-details'>
-            <span className='name'>{name}</span>
-            <span className='price'>{quantity} x ${price}</span>
+        <ItemDetailsContainer>
+            <span>{name}</span>
+            <span>{quantity} x ${price}</span>
             
-        </div>
-    </div>
+        </ItemDetailsContainer>
+    </CartItemContainer>
 )
 
 export default CartItem;
